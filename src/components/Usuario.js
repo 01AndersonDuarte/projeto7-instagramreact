@@ -38,11 +38,11 @@ export default function Usuario(){
 function DadosDoUsuario(props){
     return (
         <div class="usuario">
-            <img onClick={props.funcaoAlterarImagem} src={props.imagem} alt={props.tipoImagem}/>
+            <img data-test="profile-image" onClick={props.funcaoAlterarImagem} src={props.imagem} alt={props.tipoImagem}/>
             <div class="texto">
                 <span>
-                    <strong>{props.nomeDoUsuario}</strong>
-                    <ion-icon onClick={props.funcaoAlterarNome} name="pencil"></ion-icon>
+                    <strong data-test="name">{props.nomeDoUsuario}</strong>
+                    <ion-icon data-test="edit-name" onClick={props.funcaoAlterarNome} name="pencil"></ion-icon>
                 </span>
             </div>
         </div>
