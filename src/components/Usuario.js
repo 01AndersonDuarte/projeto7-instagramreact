@@ -11,14 +11,14 @@ export default function Usuario(){
     function alterarNome(){
         //criar tela de prompt para receber a alteração de nome
         //<TelaAlterarNome/>
-        let nomeNovo = prompt("Insira seu nome: ");
+        const nomeNovo = prompt("Insira seu nome: ");
         if(nomeNovo!==""){
             setUsuarioNome(nomeNovo);
         }
         return;
     }
     function alterarImagem(){
-        let imagemNova = prompt("Insira a nova imagem: ");
+        const imagemNova = prompt("Insira a nova imagem: ");
         if(imagemNova!==""){
             setUsuarioImagem(imagemNova);
         }

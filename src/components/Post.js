@@ -22,7 +22,7 @@ export default function Post(props){
             return;
         }
         setEstadoDoPost("bookmark-outline");
-    }   
+    }
     return (
         <div data-teste="post" onDoubleClick={()=>curtiu(true)} class="post">
             <div class="topo">

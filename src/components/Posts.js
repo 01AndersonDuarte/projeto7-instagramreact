@@ -5,7 +5,11 @@ export default function Posts(){
     return (
         <div class="posts">
             {arrayObjetosPosts.map((post)=>(
-                <Post imagemUsuario={post.imagemUsuario} nomeUsuario={post.nomeUsuario} imagemPost={post.imagemPost} imagemNomePost={post.imagemNomePost} imagemUsuarioCurtiu={post.imagemUsuarioCurtiu} nomeUsuarioCurtiu={post.nomeUsuarioCurtiu}/>))};
+                <Post
+                imagemUsuario={post.imagemUsuario} nomeUsuario={post.nomeUsuario}
+                imagemPost={post.imagemPost} imagemNomePost={post.imagemNomePost}
+                imagemUsuarioCurtiu={post.imagemUsuarioCurtiu} nomeUsuarioCurtiu={post.nomeUsuarioCurtiu}
+                />))};
         </div>
     );
 }
