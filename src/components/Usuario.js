@@ -28,7 +28,7 @@ export default function Usuario(){
     return (
         <>
             {dados.map((dado)=>(
-            <DadosDoUsuario imagem={dado.imagem} tipoImagem={dado.tipoImagem} 
+            <DadosDoUsuario imagem={dado.imagem} tipoImagem={dado.tipoImagem}
             nomeDoUsuario={dado.nomeDoUsuario} funcaoAlterarNome={alterarNome} funcaoAlterarImagem={alterarImagem}/>
             ))}
         </>

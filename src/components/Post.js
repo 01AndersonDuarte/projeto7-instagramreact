@@ -4,7 +4,6 @@ export default function Post(props){
     const [estadoDoLike, setEstadoDoLike] = useState("heart-outline");
     const [estadoDoPost, setEstadoDoPost] = useState("bookmark-outline");
     const [numeroDeLikes, setNumeroDeLikes] = useState(parseInt(Math.random()*2000));
-
     function curtiu(clickImagem){
         if(estadoDoLike==="heart-outline"){
             setEstadoDoLike("heart");
@@ -23,8 +22,7 @@ export default function Post(props){
             return;
         }
         setEstadoDoPost("bookmark-outline");
-    }
-    
+    }   
     return (
         <div data-teste="post" onDoubleClick={()=>curtiu(true)} class="post">
             <div class="topo">
