@@ -1,15 +1,18 @@
 export default function Sugestoes(){
+    const arraySugestoes = [
+        {imagemSugestao: "/img/bad.vibes.memes.svg", nomeUsuarioSugestao: "bad.vibes.memes"},
+        {imagemSugestao: "/img/chibirdart.svg", nomeUsuarioSugestao: "chibirdart"},
+        {imagemSugestao: "/img/razoesparaacreditar.svg", nomeUsuarioSugestao: "razoesparaacreditar"},
+        {imagemSugestao: "/img/adorable_animals.svg", nomeUsuarioSugestao: "adorable_animals"},
+        {imagemSugestao: "/img/smallcutecats.svg", nomeUsuarioSugestao: "smallcutecats"},
+    ];
     return (
         <div class="sugestoes">
             <div class="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
-                <Sugestao imagemSugestao="/img/bad.vibes.memes.svg" nomeUsuarioSugestao="bad.vibes.memes"/>
-                <Sugestao imagemSugestao="/img/chibirdart.svg" nomeUsuarioSugestao="chibirdart"/>
-                <Sugestao imagemSugestao="/img/razoesparaacreditar.svg" nomeUsuarioSugestao="razoesparaacreditar"/>
-                <Sugestao imagemSugestao="/img/adorable_animals.svg" nomeUsuarioSugestao="adorable_animals"/>
-                <Sugestao imagemSugestao="/img/smallcutecats.svg" nomeUsuarioSugestao="smallcutecats"/>
+            {arraySugestoes.map((sugestao)=><Sugestao imagemSugestao={sugestao.imagemSugestao} nomeUsuarioSugestao={sugestao.nomeUsuarioSugestao}/>)};
         </div>
     );
 }

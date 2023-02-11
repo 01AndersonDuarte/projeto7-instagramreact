@@ -1,16 +1,13 @@
 export default function Stories(){
+    const arrayStoriesUsuarios = [
+        {imagem: "/img/9gag.svg", nome: "9gag"}, {imagem: "/img/meowed.svg", nome: "meowed"}, 
+        {imagem: "/img/barked.svg", nome: "barked"}, {imagem: "/img/nathanwpylestrangeplanet.svg", nome: "nathanwpylestrangeplanet"}, 
+        {imagem: "/img/wawawicomics.svg", nome: "wawawicomics"}, {imagem: "/img/respondeai.svg", nome: "respondeai"},
+        {imagem: "/img/filomoderna.svg", nome: "filomoderna"}, {imagem: "/img/memeriagourmet.svg", nome: "memeriagourmet"}
+    ];
     return (
         <div class="stories">
-                    
-            <Story imagem="/img/9gag.svg" nome="9gag"/>
-            <Story imagem="/img/meowed.svg" nome="meowed"/>
-            <Story imagem="/img/barked.svg" nome="barked"/>
-            <Story imagem="/img/nathanwpylestrangeplanet.svg" nome="nathanwpylestrangeplanet"/>                 
-            <Story imagem="/img/wawawicomics.svg" nome="wawawicomics"/>
-            <Story imagem="/img/respondeai.svg" nome="respondeai"/>
-            <Story imagem="/img/filomoderna.svg" nome="filomoderna"/>
-            <Story imagem="/img/memeriagourmet.svg" nome="memeriagourmet"/>
-
+            {arrayStoriesUsuarios.map((story)=><Story imagem={story.imagem} nome={story.nome}/>)};
             <div class="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
