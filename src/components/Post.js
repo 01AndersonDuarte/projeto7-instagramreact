@@ -1,20 +1,37 @@
 import { useState } from "react";
 
 export default function Post(props){
-    const [estadoDoLike, setEstadoDoLike] = useState("heart-outline");
+    const [estadoDoLike, setEstadoDoLike] = useState("");
+    let [estadoIconeDoLike, setEstadoIconeDoLike] = useState("heart-outline");
+    let [estadoIconeNoPost, setEstadoIconeNoPost] = useState("escondido");
     const [estadoDoPost, setEstadoDoPost] = useState("bookmark-outline");
     const [numeroDeLikes, setNumeroDeLikes] = useState(parseInt(Math.random()*2000));
-    function curtiu(clickImagem){
-        if(estadoDoLike==="heart-outline"){
-            setEstadoDoLike("heart");
+    
+    function curtiu(){
+        setEstadoDoLike("likeNoPost");
+        setEstadoIconeDoLike("heart");
+    }
+    function likeUnicoClick(){
+        if(estadoDoLike===""){
+            curtiu();
             setNumeroDeLikes(numeroDeLikes+1);
             return;
-        }else if(clickImagem === true){
-            setEstadoDoLike("heart");
+        }
+        setEstadoDoLike("");
+        setEstadoIconeDoLike("heart-outline");
+        setNumeroDeLikes(numeroDeLikes-1);
+    }
+    function likeDuploClick(){
+        if(estadoDoLike===""){
+            curtiu();
+            setNumeroDeLikes(numeroDeLikes+1);
+            setEstadoIconeNoPost("likeEfeitoDuploClick");
+            setTimeout(()=>setEstadoIconeNoPost("escondido"), 500);
             return;
         }
-        setEstadoDoLike("heart-outline");
-        setNumeroDeLikes(numeroDeLikes-1);
+        curtiu();
+        setEstadoIconeNoPost("likeEfeitoDuploClick");
+        setTimeout(()=>setEstadoIconeNoPost("escondido"), 500);
     }
     function salvarPost(){
         if(estadoDoPost==="bookmark-outline"){
@@ -24,7 +41,7 @@ export default function Post(props){
         setEstadoDoPost("bookmark-outline");
     }
     return (
-        <div data-teste="post" onDoubleClick={()=>curtiu(true)} class="post">
+        <div data-teste="post" class="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.imagemUsuario} alt={props.nomeUsuario}/>
@@ -36,13 +53,15 @@ export default function Post(props){
             </div>
 
             <div class="conteudo">
-                <img data-test="post-image" src={props.imagemPost} alt={props.imagemNomePost}/>
+                <img data-test="post-image" onDoubleClick={likeDuploClick} src={props.imagemPost} alt={props.imagemNomePost}/>
+                <ion-icon class={estadoIconeNoPost} name="heart"></ion-icon>
+
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" onClick={curtiu} class={estadoDoLike} name={estadoDoLike}></ion-icon>
+                        <ion-icon data-test="like-post" onClick={likeUnicoClick} class={estadoDoLike} name={estadoIconeDoLike}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>

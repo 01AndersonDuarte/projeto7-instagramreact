@@ -305,6 +305,25 @@ ion-icon {
   color: black;
 }
 
-.heart{
+.likeNoPost{
   color: red;
+}
+.conteudo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.likeEfeitoDuploClick{
+  animation: cresce 0.3s ease-in;
+  font-size: 200px;
+  position: absolute;
+  color: #FFFFFF;
+}
+.escondido{
+  display: none;
+}
+@keyframes cresce {
+  0% {font-size: 100px;}
+  100% {font-size: 200px;}
 }

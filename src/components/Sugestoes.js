@@ -12,9 +12,9 @@ export default function Sugestoes(){
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
-            {arraySugestoes.map((sugestao)=><Sugestao imagemSugestao={sugestao.imagemSugestao} nomeUsuarioSugestao={sugestao.nomeUsuarioSugestao}/>)};
+            {arraySugestoes.map((sugestao)=><Sugestao imagemSugestao={sugestao.imagemSugestao} nomeUsuarioSugestao={sugestao.nomeUsuarioSugestao}/>)}
         </div>
-    );
+        );
 }
 function Sugestao(props){
     return (
@@ -28,5 +28,5 @@ function Sugestao(props){
             </div>
             <div class="seguir">Seguir</div>
         </div>
-    );
+        );
 }
